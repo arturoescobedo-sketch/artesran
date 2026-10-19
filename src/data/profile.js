@@ -11,7 +11,7 @@ export const user = {
   // or 'x' for the X logo, which Font Awesome 4 doesn't have.
   social: [
     { name: 'LinkedIn', icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/arturo-escobedo-522a4a2' },
-    { name: 'GitHub', icon: 'fa-github', url: '#' },
+    { name: 'GitHub', icon: 'fa-github', url: 'https://github.com/arturoescobedo-sketch/artesran' },
     { name: 'X', icon: 'x', url: '#' },
     { name: 'Facebook', icon: 'fa-facebook', url: '#', hidden: true },
   ],
@@ -33,19 +33,19 @@ export const user = {
   ],
 };
 
-// Work history for the Experience tab, most recent first. Placeholder entries — replace with your own.
+// Work history for the Experience tab, most recent first.
 // `end` can be 'Present'; `logo` (an image path under public/) is optional.
 export const experience = [
   {
     role: 'Principal Software Engineer',
     company: 'Blackbaud',
-    location: 'Chareleston, South Carolina (remote)',
+    location: 'Charleston, South Carolina (remote)',
     start: '2008',
     end: '2026',
     logo: '/img/blackbaud_logo.jpg',
     summary: "Created and maintained enterprise CRM systems, focusing on scalability and performance.",
     highlights: ['Built micro-frontend architecture in Angular to communicate between SPAs', 
-      'Architectured API layers in C#/.NET Core powering backend services and frontend applications.',
+      'Architected API layers in C#/.NET Core powering backend services and frontend applications.',
       'Led migration of legacy JMS/Oracle service bus messaging architecture to Azure Service Bus backed by Azure Cosmos DB - eliminating recurring server and licensing costs and saving the organization thousands of dollars annually.',
       'Applied LLM tool-calling and agentic patterns to accelerate legacy code translation and spec verifications reducing manual review overhead on large-scale API migrations.',
       'Created and maintained RESTful APIs to support frontend applications and third-party integrations.'
@@ -75,7 +75,7 @@ export const experience = [
     ],
   },
     {
-    role: 'Senior Software Engineer.',
+    role: 'Senior Software Engineer',
     company: 'American Dynamics',
     location: 'San Diego, CA',
     start: '2002',
@@ -86,7 +86,7 @@ export const experience = [
     ],
   },
     {
-    role: 'Senior Software Engineer.',
+    role: 'Senior Software Engineer',
     company: 'Peregrine Systems',
     location: 'San Diego, CA',
     start: '2000',
@@ -94,7 +94,7 @@ export const experience = [
     logo: null,
     summary: 'Built online enterprise asset management software with CAD system integrations.',
     highlights: ['Integrations for facilities and infrastructure tracking using CAD system integrations for Autocad, VISIO, and Solidworks.',
-      "Implmented web-based asset management interface and MFC/ATL-based desktop components using libraries like ObjectARX."
+      "Implemented web-based asset management interface and MFC/ATL-based desktop components using libraries like ObjectARX."
     ],
   },
   {
