@@ -1,0 +1,111 @@
+/* Site-wide colours, typography and small adjustments to Bootstrap 3 components. */
+
+:root {
+  --font: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --page-bg: #e5e6e6;
+  --text: #797979;
+  --text-strong: #2e2e2e;
+  --link: #667fa0;
+  --link-hover: #2a3542;
+
+  --brand: #72d0eb; /* header, highlights */
+  --brand-border: #a0d9ea;
+  --brand-dark: #207a94; /* profile card, accents */
+  --heading: #1d85a3; /* names and titles */
+  --teal: #106982; /* project titles, card buttons */
+  --sky: #57c1df; /* taglines, meta links */
+
+  --navy: #2a3542; /* sidebar */
+  --navy-raised: #35404d;
+  --navy-text: #aeb2b7;
+
+  --line: #eeeeee;
+  --radius: 4px;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+}
+
+a {
+  color: var(--link);
+}
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+/* Panels: flat white cards; headings get a thin accent line on top. */
+.panel {
+  border: none;
+  box-shadow: none;
+}
+.panel-heading {
+  border-top: 2px solid #2a8ba7;
+  border-bottom-color: #eff2f7;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Labels and badges. */
+.label {
+  padding: 0.5em 0.8em;
+}
+.label-primary {
+  background-color: #59ace2;
+}
+.label-success {
+  background-color: #a9d86e;
+}
+
+/* Buttons. */
+.btn-primary,
+.btn-primary:focus {
+  background-color: #41cac0;
+  border-color: #41cac0;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #39b2a9;
+  border-color: #39b2a9;
+}
+.btn-info,
+.btn-info:focus {
+  background-color: #58c9f3;
+  border-color: #58c9f3;
+}
+.btn-info:hover,
+.btn-info:active {
+  background-color: #53bee6;
+  border-color: #53bee6;
+}
+.btn-pill {
+  border-radius: 30px;
+}
+
+/* Inputs. */
+.form-control {
+  border: 1px solid #e2e2e4;
+  box-shadow: none;
+  color: #8a8a8a;
+}
+.form-control:focus {
+  border-color: #517397;
+  box-shadow: none;
+}
+
+.progress {
+  background: #f0f2f7;
+  box-shadow: none;
+}
+
+/* Bootstrap hides bullets only with .list-unstyled; keep plain <ul>s bullet-free unless a component opts in. */
+ul {
+  list-style: none;
+}

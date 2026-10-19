@@ -1,0 +1,242 @@
+/* Projects list and project details pages. */
+
+/* ---------- List toolbar ---------- */
+
+.project-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+/* .panel-body adds clearfix pseudo-elements, which would count as flex items here. */
+.project-toolbar::before,
+.project-toolbar::after {
+  display: none;
+}
+.project-toolbar__field label {
+  margin: 0 20px 0 0;
+  font-weight: normal;
+}
+.project-toolbar__select {
+  padding: 6px 8px;
+  border: 1px solid #eaeaea;
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 12px;
+}
+.project-toolbar__pages {
+  margin: 0;
+}
+
+/* ---------- Project cards ---------- */
+
+.project-card__media {
+  position: relative;
+}
+/* Every card image gets the same shape; artwork is cropped from the top so faces stay in view. */
+.project-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 279 / 222;
+  border-radius: var(--radius) var(--radius) 0 0;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Round-cornered button straddling the bottom edge of the image. */
+.project-card__action {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 25px;
+  line-height: 42px;
+  text-align: center;
+}
+.project-card__action:hover,
+.project-card__action:focus {
+  background: #0d5568;
+  color: #fff;
+}
+
+.project-card__body {
+  text-align: center;
+}
+.project-card__title {
+  margin: 30px 0 10px;
+  font-size: 16px;
+}
+.project-card__title a {
+  color: var(--teal);
+}
+.project-card__tagline {
+  margin: 0;
+  color: var(--sky);
+  font-size: 15px;
+}
+
+/* ---------- Sidebar panels ---------- */
+
+.category-list {
+  margin: 0;
+  padding: 0;
+}
+.category-list a {
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px dashed #d9d9d9;
+}
+
+.featured-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.featured-item:last-child {
+  margin-bottom: 0;
+}
+.featured-item__thumb img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #298fac;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: top center;
+}
+.featured-item__title {
+  color: #27a2c5;
+  font-size: 14px;
+}
+.featured-item__text {
+  margin: 0;
+}
+
+/* ---------- Project details ---------- */
+
+.project-gallery__main img {
+  width: 100%;
+  max-height: 640px;
+  object-fit: contain;
+}
+
+.project-gallery__thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.project-gallery__thumbs img {
+  width: 64px;
+  height: 84px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: top center;
+}
+.project-gallery__thumbs a.is-selected img,
+.project-gallery__thumbs a:hover img {
+  border-color: var(--sky);
+}
+
+.project-detail__title {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.project-meta {
+  margin: 15px 0;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.project-meta__row {
+  margin-bottom: 10px;
+}
+.project-meta a {
+  color: var(--sky);
+}
+
+@media (max-width: 991px) {
+  .project-gallery__thumbs {
+    margin-bottom: 15px;
+  }
+}
+
+/* ---------- Description / Reviews tabs ---------- */
+
+.project-tabs {
+  padding-bottom: 0;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  background: #4ca7c1;
+}
+.project-tabs .nav-tabs {
+  border: none;
+  font-size: 13px;
+}
+.project-tabs .nav-tabs > li {
+  margin-bottom: 0;
+}
+.project-tabs .nav-tabs > li > a {
+  margin-right: 1px;
+  border: 0;
+  border-radius: 4px 4px 0 0;
+  color: #fff;
+}
+.project-tabs .nav-tabs > li.active > a,
+.project-tabs .nav-tabs > li > a:hover,
+.project-tabs .nav-tabs > li > a:focus {
+  border: 0;
+  background: #fff;
+  color: #47596f;
+}
+
+.review-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.review-item__avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #298fac;
+  border-radius: 15px;
+}
+.review-item__text {
+  font-size: 13px;
+}
+
+/* ---------- Comment box ---------- */
+
+.comment-box__input,
+.comment-box__input:focus {
+  border: none;
+  box-shadow: none;
+  color: #8a8a8a;
+  font-size: 16px;
+  font-weight: 300;
+}
+.comment-box__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e7ebee;
+  background: #f8f7f5;
+}
+.comment-box__tools {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+.comment-box__tools a {
+  display: block;
+  padding: 6px 12px;
+  color: #7a7a7a;
+}

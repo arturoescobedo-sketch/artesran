@@ -1,0 +1,185 @@
+/* Profile pages: avatar card, facts list, summary and details. */
+
+/* ---------- Avatar card ---------- */
+
+.profile-card__header {
+  padding: 10px 10px 10px 20px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--brand-dark);
+  color: #fff;
+  text-align: center;
+}
+
+.profile-card__avatar {
+  display: inline-block;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+}
+.profile-card__avatar img {
+  width: 112px;
+  height: 112px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.profile-card__name {
+  margin: 20px 0 5px;
+  font-size: 22px;
+  font-weight: 300;
+}
+.profile-card__email {
+  font-size: 12px;
+}
+
+.profile-card__nav {
+  margin: 1px 0 0;
+  padding: 0;
+}
+.profile-card__nav > li {
+  border-bottom: 1px solid #ebeae6;
+  line-height: 30px;
+}
+.profile-card__nav > li:last-child {
+  border-bottom: none;
+}
+.profile-card__link {
+  display: block;
+  padding: 10px 15px;
+  border-left: 5px solid #fff;
+  color: #89817f;
+}
+.profile-card__link:hover,
+.profile-card__link:focus,
+.profile-card__link.is-active {
+  border-left-color: var(--brand-dark);
+  background: #f8f7f5;
+  color: #89817f;
+}
+.profile-card__nav > li:last-child > .profile-card__link {
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.profile-card__link > .fa {
+  padding-right: 10px;
+  color: #bcb3aa;
+  font-size: 16px;
+}
+.profile-card__count {
+  float: right;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+/* ---------- Facts list (Founder, Education, Skills) ---------- */
+
+.profile-facts {
+  margin: 0;
+}
+.profile-facts__row {
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ebeae6;
+  line-height: 30px;
+}
+.profile-facts__row:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.profile-facts dt,
+.profile-facts dd {
+  line-height: 30px;
+}
+.profile-facts dt {
+  flex: 0 0 40%;
+  font-weight: normal;
+}
+.profile-facts dd {
+  flex: 1;
+  color: var(--brand-dark);
+}
+
+/* ---------- Summary card ---------- */
+
+.profile-summary__name {
+  margin: 0 0 5px;
+  color: var(--heading);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.profile-summary__role {
+  margin: 0 0 30px;
+  color: var(--heading);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.profile-summary__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-btn {
+  background: #eff0f4;
+  color: #a4a4a4;
+}
+.contact-btn:hover,
+.contact-btn:focus {
+  background: #cccfd9;
+  color: #938b8b;
+}
+
+.social-links {
+  display: flex;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+}
+.social-links a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #7adaf5;
+  color: var(--heading);
+  line-height: 30px;
+  text-align: center;
+}
+.social-links a:hover,
+.social-links a:focus {
+  background: var(--heading);
+  color: #fff;
+}
+
+/* ---------- Details card ---------- */
+
+.profile-details {
+  color: #89817e;
+}
+.profile-details__title {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 300;
+}
+.profile-details__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 30px;
+  margin: 0;
+}
+.profile-details__row {
+  display: flex;
+}
+.profile-details__row dt {
+  flex: 0 0 100px;
+  font-weight: normal;
+}
+.profile-details__row dd::before {
+  content: ': ';
+}
+
+@media (max-width: 480px) {
+  .profile-details__grid {
+    grid-template-columns: 1fr;
+  }
+}

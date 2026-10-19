@@ -1,0 +1,410 @@
+/* App shell: fixed header, left sidebar, content area and footer. */
+
+/* ---------- Header ---------- */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  background: var(--brand);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.app-header__toggle {
+  padding: 0 15px 0 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.app-header__brand,
+.app-header__brand:hover,
+.app-header__brand:focus {
+  color: var(--text-strong);
+  font-size: 21px;
+  text-transform: uppercase;
+}
+
+.app-header__menus,
+.app-header__account {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header__menus {
+  margin-left: 92px;
+}
+
+.app-header__account {
+  margin-left: auto;
+  gap: 10px;
+}
+
+/* Square icon buttons with a count badge. */
+.header-icon-btn {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 2px 6px;
+  border: 1px solid #f0f0f8;
+  border-radius: var(--radius);
+  color: #666;
+  font-size: 16px;
+}
+.header-icon-btn:hover,
+.header-icon-btn:focus,
+.open > .header-icon-btn {
+  background: #fff;
+  color: var(--text-strong);
+}
+
+.header-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+.header-badge--green {
+  background: #a9d86e;
+}
+.header-badge--red {
+  background: #ff6c60;
+}
+
+.app-header__search-box {
+  position: relative;
+}
+.app-header__search-box .fa {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: #fff;
+}
+.app-header__search {
+  width: 180px;
+  padding-left: 32px;
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+.app-header__search::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+.app-header__search:focus {
+  border-color: #eaeaea;
+  background: #fff;
+  color: #555;
+}
+
+.account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  color: #555;
+}
+.account-btn:hover,
+.account-btn:focus,
+.open > .account-btn {
+  background: #f1f2f7;
+  color: #555;
+}
+.account-btn__avatar {
+  width: 29px;
+  height: 29px;
+  object-fit: cover;
+}
+.account-btn__name {
+  font-size: 13px;
+}
+
+/* ---------- Header dropdown panels ---------- */
+
+.header-dropdown {
+  top: 42px;
+  width: 235px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.header-dropdown__arrow {
+  position: absolute;
+  top: -9px;
+  left: 7px;
+  border-width: 0 9px 9px;
+  border-style: solid;
+  border-color: transparent transparent #2188a6;
+}
+
+.header-dropdown__title {
+  margin: 0;
+  padding: 10px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: #2188a6;
+  color: #fff;
+}
+
+.header-dropdown > li > a {
+  display: block;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 12px;
+  white-space: normal;
+}
+.header-dropdown > li > a:hover,
+.header-dropdown > li > a:focus {
+  background: #f7f8f9;
+  color: var(--text-strong);
+}
+
+/* Project progress rows */
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.progress-row__percent {
+  font-weight: 600;
+}
+.progress-row__bar {
+  height: 10px;
+  margin: 2px 0 0;
+}
+
+/* Review rows */
+.header-dropdown--reviews > li > a {
+  position: relative;
+  overflow: hidden;
+}
+.review-row__avatar {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 6px;
+  border-radius: 2px;
+}
+.review-row__head {
+  display: block;
+}
+.review-row__project {
+  font-weight: 600;
+}
+.review-row__time {
+  position: absolute;
+  right: 6px;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: bold;
+}
+.review-row__text {
+  display: block;
+  font-size: 11px;
+}
+
+/* Account menu */
+.header-dropdown--account {
+  top: 50px;
+  right: 0;
+  left: auto;
+}
+.header-dropdown--account > li > a {
+  color: #a4abbb;
+}
+.header-dropdown--account > li > a:hover {
+  background: none;
+}
+.header-dropdown--account > li > a .fa {
+  width: 18px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+.header-dropdown--account > li > a:hover .fa {
+  color: #50c8ea;
+}
+.header-dropdown__danger > a,
+.header-dropdown__danger > a:hover {
+  border-bottom: none !important;
+  border-radius: 0 0 3px 3px;
+  background: #e4675d !important;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+.header-dropdown__danger > a:hover .fa {
+  color: #fff !important;
+}
+
+/* ---------- Sidebar ---------- */
+
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 210px;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--navy);
+  transition: margin-left 0.3s ease;
+}
+
+.app:not(.app--sidebar-open) .app-sidebar {
+  margin-left: -210px;
+}
+
+.side-menu {
+  margin: 75px 0 0;
+  padding: 0;
+}
+
+.side-menu__item {
+  position: relative;
+  margin: 0 10px 5px;
+}
+
+.side-menu__link {
+  position: relative;
+  display: block;
+  padding: 15px 0 15px 10px;
+  border-radius: var(--radius);
+  color: var(--navy-text);
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+.side-menu__link:hover,
+.side-menu__link:focus,
+.side-menu__link.is-active {
+  background: var(--navy-raised);
+  color: #fff;
+}
+.side-menu__link > .fa:first-child {
+  padding-right: 6px;
+  font-size: 15px;
+}
+.side-menu__link:hover > .fa:first-child,
+.side-menu__link.is-active > .fa:first-child {
+  color: var(--brand);
+}
+
+.side-menu__badge {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+}
+
+.side-menu__chevron {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: var(--navy-text);
+  font-size: 14px;
+}
+.is-open > .side-menu__link .side-menu__chevron {
+  color: var(--brand);
+}
+
+/* An open group and its children read as one raised block. */
+.side-menu__item--group.is-open > .side-menu__link {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.side-menu__sub {
+  margin: 0;
+  padding: 0 0 10px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--navy-raised);
+}
+.side-menu__item--child {
+  margin: 0;
+  padding-left: 22px;
+}
+.side-menu__item--child > .side-menu__link {
+  padding: 0 0 0 10px;
+  line-height: 35px;
+}
+.side-menu__item--child > .side-menu__link:hover,
+.side-menu__item--child > .side-menu__link.is-active {
+  background: none;
+  color: var(--brand);
+}
+
+/* ---------- Content and footer ---------- */
+
+.app-main {
+  margin-left: 210px;
+  transition: margin-left 0.3s ease;
+}
+.app:not(.app--sidebar-open) .app-main {
+  margin-left: 0;
+}
+
+.app-content {
+  padding: 75px 15px 15px;
+}
+
+.app-footer {
+  padding: 10px 0;
+  background: #5b6e84;
+  color: #fff;
+  text-align: center;
+}
+.app-footer__top {
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-right: 1%;
+  border-radius: 50%;
+  background: rgba(127, 221, 248, 0.5);
+  color: var(--navy);
+  line-height: 20px;
+}
+
+/* ---------- Phones and small tablets ---------- */
+
+@media (max-width: 768px) {
+  .app-header {
+    position: absolute;
+  }
+  .app-header__menus,
+  .app-header__search-box {
+    display: none;
+  }
+
+  .app-main,
+  .app:not(.app--sidebar-open) .app-main {
+    margin-left: 0;
+  }
+
+  /* The sidebar drops down over the page under the header, full width. */
+  .app-sidebar {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-left: 0 !important;
+    transition: none;
+  }
+  .app:not(.app--sidebar-open) .app-sidebar {
+    display: none;
+  }
+  .side-menu__link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .side-menu__badge {
+    top: 8px;
+  }
+  .side-menu__chevron {
+    top: 10px;
+  }
+}

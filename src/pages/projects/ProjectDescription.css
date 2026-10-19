@@ -1,0 +1,36 @@
+/* Description tab write-up. */
+
+.project-description__title {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.project-description__subtitle {
+  color: #999;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.project-description h5 {
+  margin: 22px 0 8px;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-description p {
+  line-height: 1.6;
+}
+
+.project-description ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+/* Lists are bullet-free by default (styles/base.css); the write-up opts back in. */
+.project-description li {
+  list-style: disc;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}

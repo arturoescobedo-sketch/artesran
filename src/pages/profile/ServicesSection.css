@@ -1,0 +1,54 @@
+/* Based on .u-section-4 in reference/arturo-escobedo.css. */
+
+.services-section {
+  margin-bottom: 30px;
+  padding: 50px 30px 45px;
+  border-radius: 4px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: rgb(76, 115, 151);
+  background-image: linear-gradient(rgba(76, 115, 151, 0.9), rgba(76, 115, 151, 0.9)), url('/img/texture-16.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.services-section .services-title {
+  margin: 0;
+  font-family: inherit;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* Paragraph spacing for the intro text. */
+.services-section .services-intro {
+  margin: 35px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 575px) {
+  .services-section {
+    padding: 35px 20px 30px;
+  }
+  .services-section .services-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Fade-in when the section scrolls into view (the site's customAnimationIn: opacity 0 → 1, 1s). */
+.services-section .fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.services-section.is-visible .fade-in {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-section .fade-in {
+    opacity: 1;
+    transition: none;
+  }
+}
