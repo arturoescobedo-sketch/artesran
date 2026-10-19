@@ -1,0 +1,17 @@
+// Cloudflare Workers settings for the site. Cloudflare's build runs `npm run build`, then deploys
+// the `dist` folder as static files using this file.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "artesran",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Addresses like /projects/2 have no file of their own: serve the app and let it route.
+    "not_found_handling": "single-page-application"
+  },
+  // The site's own domains. Cloudflare creates their DNS records and HTTPS certificates.
+  "routes": [
+    { "pattern": "artesran.com", "custom_domain": true },
+    { "pattern": "www.artesran.com", "custom_domain": true }
+  ]
+}
