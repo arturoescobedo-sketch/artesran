@@ -4,7 +4,7 @@ export const user = {
   firstName: 'Arturo',
   lastName: 'Escobedo',
   email: 'arturo.escobedo@artesran.com',
-  avatar: '/img/avatar2.jpg',
+  avatar: '/img/arturo.png',
   designation: 'Developer & Software Engineer @ Artesran Inc',
   // Round icons in the profile card. Replace '#' with your profile URLs; `hidden: true` hides one.
   // `icon` is a Font Awesome 4 class (fa-linkedin, fa-github, fa-facebook, fa-youtube, ...),

@@ -12,15 +12,20 @@
   align-items: center;
   height: 60px;
   padding: 0 15px;
-  background: var(--brand);
-  border-bottom: 1px solid var(--brand-border);
+  /* Same blue textured background as .services-section. */
+  background-color: rgb(76, 115, 151);
+  background-image: linear-gradient(rgba(76, 115, 151, 0.9), rgba(76, 115, 151, 0.9)), url('/img/texture-16.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 1px solid rgb(64, 97, 128);
+  color: #fff;
 }
 
 .app-header__toggle {
   padding: 0 15px 0 0;
   border: 0;
   background: none;
-  color: var(--text);
+  color: #fff;
   font-size: 20px;
   cursor: pointer;
 }
@@ -28,7 +33,7 @@
 .app-header__brand,
 .app-header__brand:hover,
 .app-header__brand:focus {
-  color: var(--text-strong);
+  color: #fff;
   font-size: 21px;
   text-transform: uppercase;
 }
@@ -58,7 +63,7 @@
   padding: 2px 6px;
   border: 1px solid #f0f0f8;
   border-radius: var(--radius);
-  color: #666;
+  color: #fff;
   font-size: 16px;
 }
 .header-icon-btn:hover,
@@ -112,7 +117,7 @@
   padding: 6px;
   border: 1px solid #eee;
   border-radius: var(--radius);
-  color: #555;
+  color: #fff;
 }
 .account-btn:hover,
 .account-btn:focus,
@@ -234,18 +239,6 @@
 .header-dropdown--account > li > a:hover .fa {
   color: #50c8ea;
 }
-.header-dropdown__danger > a,
-.header-dropdown__danger > a:hover {
-  border-bottom: none !important;
-  border-radius: 0 0 3px 3px;
-  background: #e4675d !important;
-  color: #fff !important;
-  text-transform: uppercase;
-}
-.header-dropdown__danger > a:hover .fa {
-  color: #fff !important;
-}
-
 /* ---------- Sidebar ---------- */
 
 .app-sidebar {

@@ -125,19 +125,9 @@ export default function Header({ onToggleSidebar }) {
             </Link>
           </li>
           <li>
-            <RowLink>
-              <i className="fa fa-cog" /> Settings
-            </RowLink>
-          </li>
-          <li>
-            <RowLink>
-              <i className="fa fa-bell-o" /> Notification
-            </RowLink>
-          </li>
-          <li className="header-dropdown__danger">
-            <RowLink>
-              <i className="fa fa-key" /> Log Out
-            </RowLink>
+            <Link to="/projects">
+              <i className="fa fa-briefcase" /> Projects
+            </Link>
           </li>
         </Dropdown>
       </ul>
