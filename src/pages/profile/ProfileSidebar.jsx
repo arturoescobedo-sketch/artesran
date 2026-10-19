@@ -21,7 +21,7 @@ export default function ProfileSidebar({ user, experienceCount }) {
           <span className="profile-card__avatar">
             <img src={user.avatar} alt="" />
           </span>
-          <h1 className="profile-card__name">{user.name}</h1>
+          <h2 className="profile-card__name">{user.name}</h2>
           <p className="profile-card__email">{user.email}</p>
         </div>
         <ul className="profile-card__nav">

@@ -4,9 +4,14 @@ export const PER_PAGE_OPTIONS = [3, 6, 9, 12, 15];
 
 const DEFAULTS = { q: '', category: '', per: 9, page: 1 };
 
-const toNumber = (value, fallback) => {
+// Query-string values come from the address bar, so anything unexpected falls back to the default.
+const toPerPage = (value) => {
   const n = Number(value);
-  return value != null && Number.isFinite(n) ? n : fallback;
+  return PER_PAGE_OPTIONS.includes(n) ? n : DEFAULTS.per;
+};
+const toPage = (value) => {
+  const n = Number(value);
+  return Number.isInteger(n) && n >= 1 ? n : DEFAULTS.page;
 };
 
 // Filters live in the list page's query string (/projects?category=Unity&page=2), so links,
@@ -18,8 +23,8 @@ export function useProjectFilters() {
   const filters = {
     q: params.get('q') ?? DEFAULTS.q,
     category: params.get('category') ?? DEFAULTS.category,
-    per: toNumber(params.get('per'), DEFAULTS.per),
-    page: toNumber(params.get('page'), DEFAULTS.page),
+    per: toPerPage(params.get('per')),
+    page: toPage(params.get('page')),
   };
 
   // Any change other than the page number starts again from page 1.
