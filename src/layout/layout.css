@@ -352,6 +352,12 @@
   color: #fff;
   text-align: center;
 }
+.app-footer__link,
+.app-footer__link:hover,
+.app-footer__link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
 .app-footer__top {
   float: right;
   width: 20px;

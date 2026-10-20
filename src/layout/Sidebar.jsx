@@ -52,7 +52,7 @@ function MenuItem({ item, isOpen, onToggle, onNavigate, topLevel }) {
       >
         {item.icon && <i className={`fa ${item.icon}`} />}
         <span>{item.label}</span>
-        {item.badge && <span className={`label ${item.badge.className} side-menu__badge`}>{item.badge.text}</span>}
+        {item.badge && <span className={`badge ${item.badge.className} side-menu__badge`}>{item.badge.text}</span>}
         <i className={`fa ${isOpen ? 'fa-angle-up' : 'fa-angle-down'} side-menu__chevron`} aria-hidden="true" />
       </a>
       {isOpen && (

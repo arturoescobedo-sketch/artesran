@@ -12,7 +12,7 @@ export const sidebarMenu = [
     icon: 'fa-briefcase',
     badge: { text: 2, className: 'label-success' },
     children: [
-      { label: 'List View', path: '/projects', end: true },
+      { label: 'Project List', path: '/projects', end: true },
       // No project is picked from the menu, so it opens the first sample project.
       { label: 'Details View', path: '/projects/1', match: '/projects/:id' },
     ],

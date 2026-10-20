@@ -1,3 +1,5 @@
+import { REPO_URL } from '../brand';
+
 // Sample profile data. Replace with API calls when a backend exists.
 export const user = {
   name: 'Arturo Escobedo',
@@ -11,7 +13,7 @@ export const user = {
   // or 'x' for the X logo, which Font Awesome 4 doesn't have.
   social: [
     { name: 'LinkedIn', icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/arturo-escobedo-522a4a2' },
-    { name: 'GitHub', icon: 'fa-github', url: 'https://github.com/arturoescobedo-sketch/artesran' },
+    { name: 'GitHub', icon: 'fa-github', url: REPO_URL },
     { name: 'X', icon: 'x', url: '#' },
     { name: 'Facebook', icon: 'fa-facebook', url: '#', hidden: true },
   ],
@@ -29,7 +31,12 @@ export const user = {
   info: [
     { title: 'Founder', value: 'Artesran Inc' },
     { title: 'Education', value: 'BS Computer Science, SDSU' },
-    { title: 'Skills', value: '.Net Core, C#, SQL, CosmosDB, Angular, React, HTML, CSS, JavaScript.' },
+    {
+      title: 'Skills',
+      value:
+        '.NET, C#, ASP.NET Core, C/C++, Python, ObjectARX, REST APIs, SQL, CosmosDB, Azure Service Bus, Angular, React, ' +
+        'HTML, CSS, JavaScript, XML, GitHub, Copilot, Claude Code, MCP.',
+    },
   ],
 };
 

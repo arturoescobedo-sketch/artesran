@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import { APP_NAME } from '../brand';
+import { APP_NAME, REPO_URL } from '../brand';
 import './layout.css';
 
 const mobileQuery = window.matchMedia('(max-width: 768px)');
@@ -36,7 +36,10 @@ export default function Layout() {
         </div>
       </main>
       <footer className="app-footer">
-        {YEAR} &copy; {APP_NAME}
+        {YEAR} &copy; {APP_NAME} &middot; Built with React + Bootstrap. Source on{' '}
+        <a href={REPO_URL} className="app-footer__link" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
         <a
           href="#"
           className="app-footer__top"

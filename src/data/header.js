@@ -6,8 +6,6 @@ export const counts = { activeProjects: 2, reviews: 5 };
 export const projectProgress = [
   { title: 'Iron Valkyrie', percent: 100, variant: 'success', to: '/projects/2' },
   { title: 'Movesmith for CiviCRM', percent: 20, variant: 'info', to: '/projects/1' },
-  { title: 'Sample Project 1', percent: 0 },
-  { title: 'Sample Project 2', percent: 0 },
 ];
 
 // Latest reviews dropdown. Sample text until real reviews/comments are stored somewhere.

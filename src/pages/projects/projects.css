@@ -30,6 +30,31 @@
 
 /* ---------- Project cards ---------- */
 
+/* Flex rather than Bootstrap floats: cards of different heights (e.g. a tagline that wraps)
+   made the next row's floats snag and jump around as the window resized. */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* .row adds clearfix pseudo-elements, which would count as flex items here. */
+.project-grid::before,
+.project-grid::after {
+  display: none;
+}
+/* Full width below md (where Bootstrap's widths don't apply); stretches each card to the row height. */
+.project-grid > [class*='col-'] {
+  display: flex;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .project-grid > .col-md-4 {
+    width: 33.33333333%;
+  }
+}
+.project-grid .project-card {
+  flex: 1;
+}
+
 .project-card__media {
   position: relative;
 }
@@ -41,6 +66,21 @@
   border-radius: var(--radius) var(--radius) 0 0;
   object-fit: cover;
   object-position: top center;
+}
+
+/* Status note over the top of the image. */
+.project-card__ribbon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(16, 105, 130, 0.9); /* --teal */
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 /* Round-cornered button straddling the bottom edge of the image. */

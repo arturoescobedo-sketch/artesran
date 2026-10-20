@@ -1,9 +1,8 @@
-// Sample project data, adapted from the theme's product pages. Replace with API calls
-// (and real artwork) once they exist.
+// Project data for the list and details pages. Replace with API calls once they exist.
 import ironValkyrieDescription from './descriptions/ironValkyrie';
 import movesmithDescription from './descriptions/movesmith';
 
-// Categories shown in the sidebar. Sample projects get one each, in turn.
+// Categories shown in the sidebar.
 export const categories = [
   'CRM',
   'Python',
@@ -12,31 +11,22 @@ export const categories = [
   'Games & Entertainment',
   'Unity',
   'C#',
-  'Technology',
 ];
 
-// Number of projects in the grid (real ones first; the rest are samples).
-const PROJECT_COUNT = 8;
-
-// A project that so far only has its own image (card and details page); add more fields with
-// e.g. `{ ...withImage('/img/x.jpg'), title: 'My project' }`.
-function withImage(src) {
-  return { image: src, gallery: [{ thumb: src, full: src }] };
-}
-
-// Real project content, keyed by project id; anything not set here keeps its sample value.
+// Project content, keyed by project id. `title`, `categories`, `image` and `gallery` are required.
 // `categories` lists the project's categories (names from the `categories` list above); `status` is shown on
 // the details page (hidden when not set); `facts` adds more label/value lines under it, e.g.
 // { label: 'Released', value: 'March 2027' } or { label: 'Licence', value: 'Open source' };
+// `ribbon` is a short status note shown over the top of the card image (hidden when not set);
 // `tagline` is the short description under the title on the project card; `summary` replaces the sample paragraph next to
 // the image on the details page; `description` is the long write-up for the Description tab (see
 // data/descriptions/); `icon` is the Font Awesome icon in the card's
-// corner button (default fa-folder-open); `image` (card) and `gallery` (details page) are required
-// for every project; withImage() sets both from one picture.
-const realProjects = {
+// corner button (default fa-folder-open); `image` is the card picture and `gallery` the details-page pictures.
+const projectData = {
   1: {
     title: 'Movesmith for CiviCRM',
     tagline: 'Spend your day on donors not data entry.',
+    ribbon: 'In active development',
     categories: ['CRM', 'Python', 'YAML', 'CiviCRM APIv4'],
     status: 'Under development',
     facts: [{ label: 'Works with', value: 'CiviCRM (APIv4)' }],
@@ -52,7 +42,8 @@ const realProjects = {
   },
   2: {
     title: 'Iron Valkyrie',
-    tagline: 'Available on the App Store',
+    tagline: 'Submitted to the App Store',
+    ribbon: 'In Apple Store review',
     categories: ['Games & Entertainment', 'Unity', 'C#'],
     status: 'Submitted to the App Store',
     facts: [{ label: 'Platforms', value: 'iPhone, iPad (Apple Pencil supported)' }],
@@ -73,23 +64,11 @@ const realProjects = {
       { thumb: '/img/splash_intro.png', full: '/img/splash_intro.png' },
     ],
   },
-  3: withImage('/img/techImage.jpg'),
-  4: withImage('/img/product4.jpg'),
-  5: withImage('/img/product5.jpg'),
-  6: withImage('/img/product6.jpg'),
-  7: withImage('/img/product7.webp'),
-  8: withImage('/img/javier.webp'),
 };
 
-export const projects = Array.from({ length: PROJECT_COUNT }, (_, i) => ({
-  id: i + 1,
-  title: `Sample Project ${i + 1}`,
-  categories: [categories[i % categories.length]],
-  tagline: 'Short description of the project.',
-  ...realProjects[i + 1],
-}));
+export const projects = Object.entries(projectData).map(([id, project]) => ({ id: Number(id), ...project }));
 
-// Details shared by every sample project until real data exists.
+// Placeholder summary/description for projects that don't set their own, and sample reviews until real ones exist.
 export const sampleDetails = {
   summary:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's " +

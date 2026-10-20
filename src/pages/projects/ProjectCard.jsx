@@ -8,6 +8,7 @@ export default function ProjectCard({ project }) {
       <article className="panel project-card">
         <div className="project-card__media">
           <img src={project.image} alt="" />
+          {project.ribbon && <span className="project-card__ribbon">{project.ribbon}</span>}
           <Link to={url} className="project-card__action" aria-label={`View ${project.title}`}>
             <i className={`fa ${project.icon ?? 'fa-folder-open'}`} />
           </Link>
