@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
 import { APP_NAME } from '../brand';
-import { counts, projectProgress, latestReviews } from '../data/header';
+import { counts, projectProgress } from '../data/header';
+import { formatMonth, latestUpdates } from '../data/projects';
 import { user } from '../data/profile';
 
 // A dropdown row: a router link when it has somewhere to go, otherwise an inert link.
@@ -75,26 +76,26 @@ export default function Header({ onToggleSidebar }) {
         </Dropdown>
 
         <Dropdown
-          label="Latest reviews"
+          label="Latest updates"
           toggleClassName="header-icon-btn"
           menuClassName="header-dropdown--reviews"
           toggle={
             <>
               <i className="fa fa-comments-o" />
-              <span className="badge header-badge header-badge--red">{counts.reviews}</span>
+              <span className="badge header-badge header-badge--red">{latestUpdates.length}</span>
             </>
           }
         >
-          <DropdownTitle>You have {counts.reviews} new reviews</DropdownTitle>
-          {latestReviews.map((review, i) => (
+          <DropdownTitle>{latestUpdates.length} project updates</DropdownTitle>
+          {latestUpdates.map((update, i) => (
             <li key={i}>
-              <RowLink to={review.to}>
-                <img className="review-row__avatar" alt="" src={review.avatar} />
+              <RowLink to={update.to}>
+                <img className="review-row__avatar" alt="" src={update.avatar} />
                 <span className="review-row__head">
-                  <span className="review-row__project">{review.project}</span>
-                  <span className="review-row__time">{review.time}</span>
+                  <span className="review-row__project">{update.project}</span>
+                  <span className="review-row__time">{formatMonth(update.date)}</span>
                 </span>
-                <span className="review-row__text">{review.text}</span>
+                <span className="review-row__text">{update.text}</span>
               </RowLink>
             </li>
           ))}

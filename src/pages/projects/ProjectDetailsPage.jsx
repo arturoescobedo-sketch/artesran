@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 import CommentBox from './CommentBox';
 import ProjectDescription from './ProjectDescription';
 import { projectsUrl } from './filters';
-import { projects, sampleDetails } from '../../data/projects';
+import { formatMonth, projects, sampleDetails } from '../../data/projects';
 import './projects.css';
 
 // Keyed by the project id so the whole page starts fresh when moving between projects
@@ -69,7 +69,7 @@ function ProjectDetails({ id }) {
           </div>
         </section>
 
-        <DetailTabs description={project.description ?? details.description} reviews={details.reviews} />
+        <DetailTabs description={project.description ?? details.description} updates={project.updates ?? []} />
 
         <div className="row project-grid">
           {related.map((p) => (
@@ -123,11 +123,11 @@ function Gallery({ images }) {
   );
 }
 
-function DetailTabs({ description, reviews }) {
+function DetailTabs({ description, updates }) {
   const [tab, setTab] = useState('description');
   const tabs = [
     { id: 'description', label: 'Description' },
-    { id: 'reviews', label: `Reviews (${reviews.length})` },
+    { id: 'updates', label: `Updates (${updates.length})` },
   ];
 
   return (
@@ -169,13 +169,13 @@ function DetailTabs({ description, reviews }) {
             </div>
           ) : (
             <div className="tab-pane active">
-              {reviews.map((r, i) => (
+              {updates.map((u, i) => (
                 <article className="review-item" key={i}>
-                  <img className="review-item__avatar" src={r.avatar} alt="" />
+                  <img className="review-item__avatar" src={u.avatar} alt="" />
                   <div>
-                    <span className="review-item__text">{r.text}</span>
+                    <span className="review-item__text">{u.text}</span>
                     <p>
-                      <i className="fa fa-clock-o" /> {r.when}
+                      <i className="fa fa-clock-o" /> {formatMonth(u.date)}
                     </p>
                   </div>
                 </article>

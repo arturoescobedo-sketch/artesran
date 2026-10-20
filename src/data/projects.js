@@ -21,7 +21,9 @@ export const categories = [
 // `tagline` is the short description under the title on the project card; `summary` replaces the sample paragraph next to
 // the image on the details page; `description` is the long write-up for the Description tab (see
 // data/descriptions/); `icon` is the Font Awesome icon in the card's
-// corner button (default fa-folder-open); `image` is the card picture and `gallery` the details-page pictures.
+// corner button (default fa-folder-open); `image` is the card picture and `gallery` the details-page pictures;
+// `updates` is the Updates tab, newest first ({ date: 'YYYY-MM', text, avatar }); the header's
+// Latest updates dropdown lists every project's updates too.
 const projectData = {
   1: {
     title: 'Movesmith for CiviCRM',
@@ -37,6 +39,9 @@ const projectData = {
       'actually fits together rather than treating it as generic rows, and it runs on the CRM you already have.',
     description: movesmithDescription,
     icon: 'fa-address-card',
+    updates: [
+      { date: '2026-09', text: 'Started building Movesmith for CiviCRM.', avatar: '/img/avatars/avatar-08.jpg' },
+    ],
     image: '/img/artesranCiviCRM.png',
     gallery: [{ thumb: '/img/artesranCiviCRM.png', full: '/img/artesranCiviCRM.png' }],
   },
@@ -53,6 +58,11 @@ const projectData = {
       'Apple Pencil supported.',
     description: ironValkyrieDescription,
     icon: 'fa-gamepad',
+    updates: [
+      { date: '2026-10', text: 'Submitted Iron Valkyrie to the Apple App Store.', avatar: '/img/avatars/avatar-08.jpg' },
+      { date: '2026-09', text: 'Submitted for testing.', avatar: '/img/avatars/avatar-14.jpg' },
+      { date: '2026-08', text: 'Original design.', avatar: '/img/avatars/avatar-03.jpg' },
+    ],
     image: '/img/kira_volkov.png',
     gallery: [
       { thumb: '/img/kira_volkov.png', full: '/img/kira_volkov.png' },
@@ -68,7 +78,18 @@ const projectData = {
 
 export const projects = Object.entries(projectData).map(([id, project]) => ({ id: Number(id), ...project }));
 
-// Placeholder summary/description for projects that don't set their own, and sample reviews until real ones exist.
+// Every project's updates, newest first, for the header dropdown.
+export const latestUpdates = projects
+  .flatMap((p) => (p.updates ?? []).map((u) => ({ ...u, project: p.title, to: `/projects/${p.id}` })))
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+// '2026-10' -> 'Oct 2026'.
+export function formatMonth(date) {
+  const [year, month] = date.split('-').map(Number);
+  return new Date(year, month - 1).toLocaleString('en-US', { month: 'short', year: 'numeric' });
+}
+
+// Placeholder summary/description for projects that don't set their own.
 export const sampleDetails = {
   summary:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's " +
@@ -81,11 +102,6 @@ export const sampleDetails = {
       'ullamcorper mauris sagittis vitae. Pellentesque et nibh sed nunc sagittis euismod. In hac habitasse platea dictumst.',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisi purus. Aliquam eget suscipit ligula. ' +
       'Donec convallis vestibulum egestas. Morbi molestie dapibus lorem et congue. In hac habitasse platea dictumst.',
-  ],
-  reviews: [
-    { avatar: '/img/avatars/avatar-08.jpg', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', when: '1 hours ago' },
-    { avatar: '/img/avatars/avatar-14.jpg', text: 'Nulla vel metus scelerisque ante sollicitudin commodo', when: '23 mins ago' },
-    { avatar: '/img/avatars/avatar-03.jpg', text: 'Donec lacinia congue felis in faucibus.', when: '15 mins ago' },
   ],
 };
 
