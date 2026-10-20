@@ -265,18 +265,7 @@
 .comment-box__footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   border-top: 1px solid #e7ebee;
   background: #f8f7f5;
-}
-.comment-box__tools {
-  display: flex;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-.comment-box__tools a {
-  display: block;
-  padding: 6px 12px;
-  color: #7a7a7a;
 }
