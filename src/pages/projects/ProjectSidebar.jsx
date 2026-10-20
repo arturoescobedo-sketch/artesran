@@ -40,7 +40,7 @@ export function CategoryPanel({ filters }) {
   return (
     <section className="panel">
       <header className="panel-heading">
-        <span className="label label-primary">Category</span>
+        <span className="label label-primary">Filters</span>
       </header>
       <div className="panel-body">
         <ul className="category-list">

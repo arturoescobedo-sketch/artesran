@@ -42,7 +42,7 @@ function ProjectDetails({ id }) {
               <p>{project.summary ?? details.summary}</p>
               <div className="project-meta">
                 <div className="project-meta__row">
-                  <strong>Categories:</strong>{' '}
+                  <strong>Tech:</strong>{' '}
                   {project.categories.map((category, i) => (
                     <Fragment key={category}>
                       <Link rel="tag" to={projectsUrl({ category })}>
