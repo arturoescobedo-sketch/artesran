@@ -334,7 +334,10 @@
 
 /* ---------- Content and footer ---------- */
 
+/* At least a screen tall (less the ~40px footer), so the footer starts at the bottom of the window
+   instead of jumping down as the page content appears (a layout shift in Web Vitals). */
 .app-main {
+  min-height: calc(100vh - 40px);
   margin-left: 210px;
   transition: margin-left 0.3s ease;
 }

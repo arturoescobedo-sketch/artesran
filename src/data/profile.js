@@ -6,7 +6,7 @@ export const user = {
   firstName: 'Arturo',
   lastName: 'Escobedo',
   email: 'arturo.escobedo@artesran.com',
-  avatar: '/img/arturo.png',
+  avatar: '/img/arturo-256.jpg',
   designation: 'Developer & Software Engineer @ Artesran Inc',
   // Round icons in the profile card. Replace '#' with your profile URLs; `hidden: true` hides one.
   // `icon` is a Font Awesome 4 class (fa-linkedin, fa-github, fa-facebook, fa-youtube, ...),
@@ -21,7 +21,7 @@ export const user = {
   services: {
     title: 'Services',
     intro:
-      "I'm a principal software engineer, 18+ years in, mostly building enterprise CRM systems and the AI layer that makes them smarter. " +
+      "I'm a principal software engineer, 20+ years in, mostly building enterprise CRM systems and the AI layer that makes them smarter. " +
       'My recent work is in the intersection of CRM engineering and agentic AI - tool definitions and backend services that let embedded copilots ' +
       "execute real actions on a user's behalf, with human-in-the-loop confirmations wherever that matters. " +
       "On my own time I shipped a solo indie game and I build small projects to explore ideas the day job doesn't cover. Both of " +
