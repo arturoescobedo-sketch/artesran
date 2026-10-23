@@ -64,6 +64,11 @@ function ProjectDetails({ id }) {
                 ))}
               </div>
               <FollowButton />
+              {project.link && (
+                <a className="btn btn-pill btn-info project-link" href={project.link.url} target="_blank" rel="noreferrer">
+                  <i className="fa fa-external-link" /> {project.link.label}
+                </a>
+              )}
             </div>
             </div>
           </div>

@@ -17,6 +17,7 @@ export const categories = [
 // `categories` lists the project's categories (names from the `categories` list above); `status` is shown on
 // the details page (hidden when not set); `facts` adds more label/value lines under it, e.g.
 // { label: 'Released', value: 'March 2027' } or { label: 'Licence', value: 'Open source' };
+// `link` adds a button next to Follow on the details page ({ label, url }, e.g. a store page);
 // `ribbon` is a short status note shown over the top of the card image (hidden when not set);
 // `tagline` is the short description under the title on the project card; `summary` replaces the sample paragraph next to
 // the image on the details page; `description` is the long write-up for the Description tab (see
@@ -47,11 +48,15 @@ const projectData = {
   },
   2: {
     title: 'Iron Valkyrie',
-    tagline: 'Submitted to the App Store',
-    ribbon: 'In Apple Store review',
+    tagline: 'Available on the App Store',
+    ribbon: 'Now on the App Store',
     categories: ['Games & Entertainment', 'Unity', 'C#'],
-    status: 'Submitted to the App Store',
-    facts: [{ label: 'Platforms', value: 'iPhone, iPad (Apple Pencil supported)' }],
+    status: 'Available on the App Store',
+    facts: [
+      { label: 'Platforms', value: 'iPhone, iPad (Apple Pencil supported)' },
+      { label: 'Price', value: '$2.99, one-time purchase' },
+    ],
+    link: { label: 'View on the App Store', url: 'https://apps.apple.com/us/app/iron-valkyrie/id6800208584' },
     summary:
       'Iron Valkyrie is a story-driven mech match-3 RPG. Match gems, power up your pilots\' abilities, and fight ' +
       'through two campaigns and 65 battles to uncover the truth behind a war. One purchase, no loot boxes, ' +
@@ -59,6 +64,7 @@ const projectData = {
     description: ironValkyrieDescription,
     icon: 'fa-gamepad',
     updates: [
+      { date: '2026-10', text: 'Iron Valkyrie is out on the App Store.', avatar: '/img/avatars/avatar-19.jpg' },
       { date: '2026-10', text: 'Submitted Iron Valkyrie to the Apple App Store.', avatar: '/img/avatars/avatar-08.jpg' },
       { date: '2026-09', text: 'Submitted for testing.', avatar: '/img/avatars/avatar-14.jpg' },
       { date: '2026-08', text: 'Original design.', avatar: '/img/avatars/avatar-03.jpg' },

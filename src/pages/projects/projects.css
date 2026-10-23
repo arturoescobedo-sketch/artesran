@@ -269,3 +269,8 @@
   border-top: 1px solid #e7ebee;
   background: #f8f7f5;
 }
+
+/* Store/website button next to Follow on the details page. */
+.project-link {
+  margin-left: 8px;
+}

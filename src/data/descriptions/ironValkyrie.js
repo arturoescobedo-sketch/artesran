@@ -92,7 +92,7 @@ export default {
     {
       heading: 'Outcome',
       text:
-        'Two complete campaigns with a full narrative arc, submitted to the App Store under a one-time purchase ' +
+        'Two complete campaigns with a full narrative arc, released on the App Store under a one-time purchase ' +
         'model with no accounts or loot boxes.',
     },
   ],
